@@ -1,0 +1,182 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="15cm"
+   height="7cm"
+   viewBox="0 0 531.49606 248.03149"
+   id="svg2"
+   version="1.1"
+   inkscape:version="0.91 r13725"
+   sodipodi:docname="exemplo01.svg">
+  <defs
+     id="defs4" />
+  <sodipodi:namedview
+     id="base"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageopacity="0.0"
+     inkscape:pageshadow="2"
+     inkscape:zoom="1.4"
+     inkscape:cx="262.79447"
+     inkscape:cy="98.638116"
+     inkscape:document-units="px"
+     inkscape:current-layer="layer1"
+     showgrid="false"
+     units="cm"
+     inkscape:window-width="1366"
+     inkscape:window-height="706"
+     inkscape:window-x="-8"
+     inkscape:window-y="-8"
+     inkscape:window-maximized="1" />
+  <metadata
+     id="metadata7">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title></dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g
+     inkscape:label="Camada 1"
+     inkscape:groupmode="layer"
+     id="layer1"
+     transform="translate(0,-804.33076)">
+    <g
+       transform="translate(-3.7491647,0.00139237)"
+       id="layer1-0"
+       inkscape:label="Camada 1">
+      <path
+         inkscape:connector-curvature="0"
+         id="path3108"
+         d="m 170.38169,854.1466 66.78572,0"
+         style="fill:none;stroke:#000000;stroke-width:2.59139395px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1" />
+      <path
+         style="fill:none;stroke:#000000;stroke-width:2.59139395px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+         d="m 173.23883,952.00371 66.78572,0"
+         id="path3110"
+         inkscape:connector-curvature="0" />
+      <rect
+         ry="22.857143"
+         y="830.93231"
+         x="12.831245"
+         height="46.42857"
+         width="168.5799"
+         id="rect3151"
+         style="fill:#999999;fill-opacity:1;stroke:#000000;stroke-width:2.35879493;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" />
+      <text
+         transform="scale(1.0127497,0.9874108)"
+         sodipodi:linespacing="125%"
+         id="text3153"
+         y="871.94977"
+         x="23.244364"
+         style="font-style:normal;font-weight:normal;font-size:24.30599403px;line-height:125%;font-family:Sans;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none"
+         xml:space="preserve"><tspan
+           y="871.94977"
+           x="23.244364"
+           id="tspan3155"
+           sodipodi:role="line">Aplicação A</tspan></text>
+      <rect
+         style="fill:#999999;fill-opacity:1;stroke:#000000;stroke-width:2.35879493;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+         id="rect3157"
+         width="168.5799"
+         height="46.42857"
+         x="12.874573"
+         y="928.78943"
+         ry="22.857143" />
+      <text
+         xml:space="preserve"
+         style="font-style:normal;font-weight:normal;font-size:24.30599403px;line-height:125%;font-family:Sans;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none"
+         x="22.539068"
+         y="971.05463"
+         id="text3159"
+         sodipodi:linespacing="125%"
+         transform="scale(1.0127497,0.9874108)"><tspan
+           sodipodi:role="line"
+           id="tspan3161"
+           x="22.539068"
+           y="971.05463">Aplicação C</tspan></text>
+      <path
+         style="fill:none;stroke:#000000;stroke-width:2.59139395px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+         d="m 287.52455,900.57519 66.78572,0"
+         id="path3203"
+         inkscape:connector-curvature="0" />
+      <path
+         inkscape:connector-curvature="0"
+         id="path3205"
+         d="m 298.23883,997.71801 66.78572,0"
+         style="fill:none;stroke:#000000;stroke-width:2.59139395px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1" />
+      <rect
+         style="fill:#999999;fill-opacity:1;stroke:#000000;stroke-width:2.35879493;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+         id="rect3163"
+         width="168.5799"
+         height="46.42857"
+         x="355.39706"
+         y="877.3609"
+         ry="22.857143" />
+      <text
+         xml:space="preserve"
+         style="font-style:normal;font-weight:normal;font-size:24.30599403px;line-height:125%;font-family:Sans;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none"
+         x="361.49756"
+         y="918.97046"
+         id="text3165"
+         sodipodi:linespacing="125%"
+         transform="scale(1.0127497,0.9874108)"><tspan
+           sodipodi:role="line"
+           id="tspan3167"
+           x="361.49756"
+           y="918.97046">Aplicação B</tspan></text>
+      <rect
+         ry="22.857143"
+         y="974.50372"
+         x="357.58325"
+         height="46.42857"
+         width="168.5799"
+         id="rect3169"
+         style="fill:#999999;fill-opacity:1;stroke:#000000;stroke-width:2.35879493;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" />
+      <text
+         transform="scale(1.0127497,0.9874108)"
+         sodipodi:linespacing="125%"
+         id="text3171"
+         y="1017.3516"
+         x="363.65622"
+         style="font-style:normal;font-weight:normal;font-size:24.30599403px;line-height:125%;font-family:Sans;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none"
+         xml:space="preserve"><tspan
+           y="1017.3516"
+           x="363.65622"
+           id="tspan3173"
+           sodipodi:role="line">Aplicação D</tspan></text>
+      <rect
+         ry="16.746183"
+         y="817.98798"
+         x="196.46246"
+         height="220.71428"
+         width="138.57111"
+         id="rect3090"
+         style="fill:#ffdd55;fill-opacity:1;stroke:#000000;stroke-width:2.4656415;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" />
+      <flowRoot
+         transform="translate(-4.3144836,879.21761)"
+         style="font-style:normal;font-weight:normal;font-size:18px;line-height:125%;font-family:Sans;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none"
+         id="flowRoot3100"
+         xml:space="preserve"><flowRegion
+           id="flowRegion3102"><rect
+             y="35.888638"
+             x="210.71428"
+             height="107.14286"
+             width="145.00002"
+             id="rect3104" /></flowRegion><flowPara
+           id="flowPara3106">Message Bus</flowPara></flowRoot>    </g>
+  </g>
+</svg>
