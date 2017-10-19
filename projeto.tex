@@ -5,8 +5,8 @@
 	sumario=abnt-6027-2012, %tradicional, 
 	oneside,			        				% twoside para impressão em verso e anverso. Oposto a oneside
 	a4paper,			    				% tamanho do papel. 
-	english,		         					% idioma adicional para hifenização
-	brazil				        				% o último idioma é o principal do documento
+	brazil,		         					% idioma adicional para hifenização
+	english			        				% o último idioma é o principal do documento
 	]{abntex2}
 
 % Pacotes básicos 
@@ -21,48 +21,91 @@
 \usepackage{unijui}
 \usepackage{enumitem}
 \usepackage{tocloft}
+
+\settocdepth{section}
  
 \setlength{\cftsectionindent}{20mm}
 \setlength{\cftsectionnumwidth}{10mm} 
 \setlength{\cftsubsectionindent}{30mm}
 \setlength{\cftsubsectionnumwidth}{10mm}
 
+
 % Pacotes adicionais, usados apenas no âmbito do Modelo Canônico do abnteX2
 \usepackage{lipsum}				% para geração de dummy text
 
 % Pacotes de citações
-\usepackage[brazilian,hyperpageref]{backref}	 % Paginas com as citações na bibl
+\usepackage[english,hyperpageref]{backref}	 % Paginas com as citações na bibl
 \usepackage[alf]{abntex2cite}	% Citações padrão ABNT
 
 % CONFIGURAÇÕES DE PACOTES
 
 % Configurações do pacote backref
 % Usado sem a opção hyperpageref de backref
-\renewcommand{\backrefpagesname}{Citado na(s) página(s):~}
+\renewcommand{\backrefpagesname}{Cited on page (s):~}
 % Texto padrão antes do número das páginas
 \renewcommand{\backref}{}
 % Define os textos da citação
 \renewcommand*{\backrefalt}[4]{
 	\ifcase #1 %
-		Nenhuma citação no texto.%
+		No citation in the text.%
 	\or
-		Citado na página #2.%
+		Cited on page #2.%
 	\else
-		Citado #1 vezes nas páginas #2.%
+		Cited #1 times on pages #2.%
 	\fi}%
+    
+%% adjusts names from abnTeX2
+\addto\captionsenglish{% ingles
+\renewcommand{\bibname}{References}
+\renewcommand{\indexname}{Summary}
+\renewcommand{\folhaderostoname}{Title page}
+\renewcommand{\epigraphname}{Epigraph}
+\renewcommand{\dedicatorianame}{Dedication}
+\renewcommand{\errataname}{Errata sheet}
+\renewcommand{\agradecimentosname}{Acknowledgements}
+\renewcommand{\anexoname}{ANNEX}
+\renewcommand{\anexosname}{Annex}
+\renewcommand{\apendicename}{APPENDIX}
+\renewcommand{\apendicesname}{Appendix}
+\renewcommand{\orientadorname}{Supervisor:}
+\renewcommand{\coorientadorname}{Co-supervisor:}
+\renewcommand{\folhadeaprovacaoname}{Approval}
+\renewcommand{\resumoname}{Abstract}
+\renewcommand{\listadesiglasname}{List of abbreviations and acronyms}
+\renewcommand{\listadesimbolosname}{List of symbols}
+\renewcommand{\fontename}{Source}
+\renewcommand{\notaname}{Note}
+%% adjusts names used by \autoref
+\renewcommand{\pageautorefname}{page}
+\renewcommand{\sectionautorefname}{section}
+\renewcommand{\subsectionautorefname}{subsection}
+\renewcommand{\subsubsectionautorefname}{subsubsection}
+\renewcommand{\paragraphautorefname}{subsubsubsection}
+}
 
 % Informações de dados para capa:
-\titulo{TÍTULO DO PROJETO}
-\autor{NOME DO AUTOR}
-\local{Ijuí, RS, Brasil}
-\data{2016}
-\orientador{NOME DO ORIENTADOR}
-\coorientador{NOME DO COORIENTADOR}
-\tipotrabalho{Projeto de Dissertação}
-\instituicao{
-  Universidade Regional do Noroeste do \\Estado do Rio Grande do Sul -- UNIJUÍ
+\titulo{A Hybrid Execution Model for a Runtime System to Execute Integration Processes for Business Intelligence in the Cloud Computing}
+\autor{Discente: Daniela Freire Sellaro}
+\local{Ijuí, RS, Brazil}
+\data{2017}
+
+\orientador{Dr. Rafael Zancan Frantz}
+
+\coorientador{Dr.Inmaculada Hernández Salmerón
+
+Department of Languages and Information Systems of the University of Seville - Spain}
+
+\tipotrabalho{Thesis Proposal}
+\instituicao{Unijuí University
+
+Department of Exact Sciences and Engineering
+
+Postgraduate Program in Mathematical Modelling  
+
+Computational modelling, optimization and systems control
 	
-	Grupo de Pesquisa em Computação Aplicada (GCA)
+    Applied Computing Research Group
+    
   \par
 }
 
@@ -101,21 +144,21 @@
 
 % Início do documento
 \begin{document}
-
+\selectlanguage{english}
 % Retira espaço extra obsoleto entre as frases.
 \frenchspacing 
 
 % Capa
 \imprimircapa
 
-% Resumo em português:
-\setlength{\absparsep}{18pt} % ajusta o espaçamento dos parágrafos do resumo
-\begin{resumo}
-\input{src/resumo.tex}
-\end{resumo}
+% % Resumo em português:
+% \setlength{\absparsep}{18pt} % ajusta o espaçamento dos parágrafos do resumo
+% \begin{resumo}
+% \input{src/resumo.tex}
+% \end{resumo}
 
 % Resumo em inglês:
-\begin{resumo}[Abstract]
+\begin{resumo}[Summary]
  \begin{otherlanguage*}{english}
 \input{src/abstract.tex}
  \end{otherlanguage*}
@@ -129,25 +172,45 @@
 \textual
 
 % Introdução:
-\chapter{INTRODUÇÃO}
+\chapter{INTRODUCTION}
 \input{src/introducao.tex}
-
+%
+% % Capítulo 2:
+% \chapter{STATEMENT AND OBJECTIVES}
+% \input{src/objectives.tex}
 % Capítulo 2:
-\chapter{CASO DE ESTUDO}
-\input{src/capitulo02.tex}
+\chapter{METHODOLOGY}
+\input{src/methodology.tex}
 
 % Capítulo 3:
-\chapter{METODOLOGIA}
-\input{src/capitulo03.tex}
+\chapter{STATE OF THE ART}
+\input{src/stateofart.tex}
 
 % Capítulo 4:
-\chapter{REFERENCIAL TEÓRICO}
-\input{src/capitulo04.tex}
+\chapter{RESEARCH PROBLEMS}
+\input{src/researchproblems.tex}
 
 % Capítulo 5:
-\chapter{ESTÁGIO ATUAL E CRONOGRAMA DE TRABALHO}
-\input{src/capitulo05.tex}
+\chapter{VALIDATION}
+\input{src/validation.tex}
 
+% Capítulo 6:
+\chapter{SCHEDULE AND CURRENT STAGE}
+\input{src/schedule.tex}
+
+% Capítulo 5:
+\chapter{AVAILABLE INFRASTRUCTURE}
+\input{src/infrastructure.tex}
+
+% % Capítulo 6:
+% \chapter{COLLABORATIONS}
+% \input{src/collaboration.tex}
+%
+% % Capítulo 7:
+% \chapter{CURRENT STAGE}
+% \input{src/currentstage.tex}
+%
+%
 % Referências bibliográficas:
 \bibliography{bibliografia}
 

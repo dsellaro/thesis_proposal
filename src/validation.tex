@@ -1,0 +1,129 @@
+%capitulo09
+\label{cap:validation}
+\noindent 
+This section indicates how the proposal will be validated by means whose the solutions found for the implementation of a more efficient runtime system will be validated. We will carry out experiments with the execution of business process integration solutions in different runtime systems. The results of these experiments will be used to analyse and compare the performance of the runtime systems. It will be considered the best performance runtime system, the one that has the lowest total average processing time of a message in the flow of an integration solution, considering the same message input rate and using the same amount of computational resources, amount of threads and memory, for each of the runtime systems tested.
+
+According to the Law of Large Numbers~\cite{hoeffding1961}, in a performance comparison of execution of applications between runtime systems, when the number of performance observations is infinite, then the performance distribution of each runtime system, as well as its quantitative features, can be accurately captured, becoming this comparison straightforward and accurate. However, in practice, the number of collected performance observations is limited, then it is necessary to introduce a quantitative indicator of confidence to judge whether a comparison result corresponds to a stochastic effect or whether it is significant enough to accept.
+
+Usually, estimating confidences of performance evaluations use parametric statistic \textit{t}-statistics. However, in the context of runtime system performance, \textit{t}-statistics require the sample mean of the performance observations to be distributed normally, which must be guaranteed by either a normal performance distribution or a sufficiently large number of performance observations~\cite{sitthi2006}. For validation of the proposed runtime system, it will be used the Hierarchical Performance Testing (HPT) framework~\cite{chen2015}, based on non-parametric statistics, which provide a good quantitative estimate of the confidence and it is significantly more practical than standard \textit{t}-statistics, because it does not require to collect a large number of performance observations in order to achieve a normal distribution of sample mean. 
+% %==============================================================================
+% \subsubsection{Qualitative performance comparisons non-parametric HPT framework}
+% \label{subsubsec:qualitative}
+% %==============================================================================
+% In HPT, performance samples of a runtime system $X$ and of a runtime system $Y$ can be represented by performance matrices $S_{X}={\left [ x_{i,j} \right ]}_{m \ast n}$ and $S_{Y}={\left [ y_{i,j} \right ]}_{m \ast n}$, respectively, where $n$ is a total number benchmark applications and $m$ is a total number of repetitions of execution of the application. So, the performance scores of $X$ and $Y$ at their $j-th$ runs on the $i-th$ benchmark is $x_{i,j}$ and $y_{i,j}$ respectively. For the corresponding rows of $S_{X}$ and $S_{Y}$.
+% HPT establishes as the null hypothesis and the alternative hypothesis of Statistical Hypothesis Test (SHT):
+% \begin{description}
+% \item [Null hypothesis $H_\tau,0$]: \textit{the performance scores of $X$ and $Y$ on the $\tau-th$ benchmark are equivalent to each other}
+% \item [Alternative hypothesis $H_\tau,1$]: \textit{the performance score of $X$ is higher than that of $Y$ on the $\tau-th$ benchmark}
+% \end{description}
+% The Wilcoxon Rank-Sum Test\cite{wilcoxon1992} is used to investigate whether the difference between the performance score of $X$ and $Y$ is significant enough. The steps of Wilcoxon Rank-Sum Test are described as following:
+% \begin{itemize}
+% \item Define the significance level be $\alpha _{\tau }$ , where the literature suggests setting $\alpha _{\tau }$ = 0.05 for $m$ ≥ 5 and 0.10 for the rest cases.
+% \item Sort $x _{\tau,1}$, $x _{\tau,2}$,...,$x _{\tau,m}$, $y _{\tau,1}$, $y _{\tau,2}$,...,$y _{\tau,m}$ in ascending order, and assign each of the scores the corresponding rank , from 1 to 2$m$. The rank sums of $X$ and $Y$, on the $\tau-th$ benchmark, are defined as:
+% \[ R_{X,\tau }=\sum_{j=1}^{m}Rank_{\tau}\left ( x_{\tau ,j} \right ), R_{Y,\tau }=\sum_{j=1}^{m}Rank_{\tau}\left ( y_{\tau ,j} \right ),\]
+% where $Rank_{\tau}\left ( . \right )$ provides the rank of a performance score on the $\tau-th$ benchmark.
+% In statistics, when $m < 12$, the critical values for Wilcoxon rank sum test are calculated directly. When $m\geq 12$, the corresponding critical values are often estimated by studying the approximate distribution of the rank sum.
+% \item Case $m < 12$, when the alternative hypothesis of the SHT is $H_\tau,1$], the null 		hypothesis is rejected and $H_\tau,1$ is accepted,if $R_{x,\tau }$, is no smaller than the critical value under the significance level $\alpha _{\tau }$~\cite{hogg2009}.
+%  \item Case $m\geq 12$, define two new statistics $z _{x,\tau }$. and $z _{y,\tau }$ as follows:
+% \[ z_{X,\tau}=\frac{R_{X,\tau}-\frac{1}{2}m\left (2m+1 \right )}{\sqrt{\frac{1}{12}m^2\left ( 2m+1 \right )}}, z_{Y,\tau}=\frac{R_{Y,\tau}-\frac{1}{2}m\left (2m+1 \right )}{\sqrt{\frac{1}{12}m^2\left ( 2m+1 \right )}}\]
+% Under the null hypothesis, $z_{X,\tau}$, and $z_{Y,\tau}$, approximately obey the standard normal distribution $\mathit{N}\left (0,1 \right )$. When the alternative hypothesis of the SHT is $H_\tau,1$, the null hypothesis is rejected and $H_\tau,1$ is accepted, if $z_{x,\tau}$ is no smaller than the critical value under the significance level $\alpha _{\tau }$~\cite{hogg2009}.
+%
+% After carrying out the above SHT with respect to the $\tau-th$ benchmark $\left ( \tau = 1, . . . , n\right )$, it is possible to assign the difference, denoted by $d-\tau$, between the performance of $X$ and $Y$. If the SHT accepts $H_\tau,1$ with a significance level between 0.01 and 0.05, then
+% \[d_{\tau} = median\left \{ x_{\tau ,1}, x_{\tau ,2},...,x_{\tau ,m} \right \}- median\left \{ y_{\tau ,1}, y_{\tau ,2},...,y_{\tau ,m} \right \}, \tau = 1,..,n.
+% \]
+% Otherwise, when the null hypothesis $H_\tau,0$ has not been rejected at a promising significant level, $d_\tau = 0$, the insignificant difference between the performance scores of $X$ and $Y$ is ignored.
+% $d_1, d_2, . . . , d_n$ will then be utilized in the following Wilcoxon Signed-Rank Test~\cite{wilcoxon1992} for the performance comparison over different benchmarks.
+% \end{itemize}
+%
+% In case that there are not significant difference between the performance scores of $X$ and $Y$, HPT establishes as the null hypothesis and the alternative hypothesis of Statistical Hypothesis Test (SHT):
+% \begin{description}
+% \item [Null hypothesis $H_0$]: \textit{the general performance of $X$ is equivalent to that
+% of $Y$}
+% \item [Alternative hypothesis $H_1$]: \textit{the general performance of $X$ is better than that of $Y$}
+% \end{description}
+% The Wilcoxon Signed-Rank Test~\cite{wilcoxon1992} is used to calculate the critical value under
+% the significance level, as following:
+% \begin{itemize}
+% \item Rank $d _1$, $d _2$,...,$d _n$ according to an ascending order of their absolute values. The rank sums of $X$ and $Y$, on the signed-rank sums are defined as:
+% \[ R_X=\sum_{i:d_i>0}Rank\left ( d_i \right ) + \frac{1}{2} \sum_{i:d_i=0}Rank\left ( d_i \right ), R_Y=\sum_{i:d_i<0}Rank\left ( d_i \right ) + \frac{1}{2} \sum_{i:d_i=0}Rank\left ( d_i \right )\],
+% where $ Rank \left ( d_i \right) $ provides the rank of absolute value of the $d_i$.
+%
+% In statistics, when $n < 25$, the critical values for Wilcoxon Signed-Rank Test are calculated directly, otherwise, when $n\geq 25$, the corresponding critical values are often estimated by studying the approximate distribution of the signed rank sum. 
+% \item Case $n <25$, when the alternative hypothesis of the SHT is $H_1$, the null hypothesis is rejected and $H_1$ is accepted, if $R_Y$ is no larger than the critical value under the significance level~\footnote[1]{The critical values of Wilcoxon Signed-Rank Test are available in statistics books~\cite{hogg2009} } $\alpha$.
+% \item Case $n\geq 25$, two new statistics $z_X$ and $z_Y$ are defined:
+% \[ z_{X}=\frac{R_{X}-\frac{1}{4}n\left (n+1 \right )}{\sqrt{\frac{1}{24}n\left ( n+1 \right ) \left ( 2n+1 \right )}},
+%  z_{Y}=\frac{R_{Y}-\frac{1}{4}n\left (n+1 \right )}{\sqrt{\frac{1}{24}n\left ( n+1 \right ) \left ( 2n+1 \right )}} \]
+%  Under the null hypothesis, $z_X$, and $z_Y$, approximately obey the standard normal distribution $\mathit{N}\left (0,1 \right )$.
+ %
+% Hence, when the alternative hypothesis of the SHT is $H_1$, the null hypothesis is rejected and $H_1$ is accepted, if $z_Y$ is no larger than the critical value under the significance level $\alpha$. For the comparison over different benchmarks, the outputs of the HPT, including the comparison result and its confidence, are finally presented by the above Wilcoxon Signed-Rank Test. Formally, given a fixed significance level $\alpha$ for the HPT, the assert made by the HPT: \textit{X outperforms Y with the confidence $r$}, where $r = 1 - \alpha$ is represent by $ Confidence(\textsc{HPT} : S_X\succ S_Y)\geq r $.
+%  \end{itemize}
+ %
+% %==============================================================================
+% \subsubsection{Quantitative performance comparisons non-parametric HPT framework}
+% \label{subsubsec:quantitative}
+% %==============================================================================
+%
+% In most cases, there is more interest in quantitative comparison results such as “Runtime system X is more than $\gamma$ times faster than runtime system Y”, where $\gamma \geq 1$ is defined as the speedup-under-test. The HPT framework provides provides two approaches speedup arguments: \textit{(i)} requires a previously value for $\gamma$ and \textit{(ii)} requires the largest speedup that results in a reliable comparison result.
+%
+% The first approach requires a previously value for $\gamma$. Afterwards, the performance scores of runtime system X are shrieked by transforming the corresponding performance matrix $S_X$ to $\frac{S_X} {\gamma} $, without losing generality, it is employed normalized performance ratio as performance score with respect to each benchmark, where a larger performance score means better performance. Considering a virtual runtime system with performance matrix $S_X$ to $ \frac {S_X}  {\gamma} $, if the HPT framework states that the virtual runtime system outperforms runtime system Y with a confidence $r$, it is possible to claim \textit{X has a performance times better $ \gamma $ than Y with a confidence $r$ }. In general, if a more conservative speedup is specified before speedup testing, the corresponding speedup argument will have a larger confidence $r$; otherwise, if a less conservative speedup is specified before speedup testing, the corresponding speedup argument will have a smaller confidence $r$. Chen et al.~\cite{chen2015}, HPT authors, recommend to keep a balance between the speedup and the corresponding confidence, so as to make a convincing yet not-too-conservative conclusion.
+%
+% When the interest is to know the largest speedup that results in a reliable comparison result, for a given confidence $r$. For this approach, HPT framework offers an alternative way of estimating the speedup and corresponding confidence, defining the $r$-Speedup as:
+% \[ 
+% \texttt{sup}\left \{ \gamma \geq 1;confidence\left ( \textsc{HPT}:\frac{1}{\gamma}S_X \succ S_Y \right )\geq r\right \}
+% \]
+% Then, the $r$-Speedup of runtime system X over runtime system Y is the largest speedup of X over Y having a confidence above $r$ . The $r$-Speedup can be  viewed as a quantitative indicator of performance speedup with the guarantee of confidence $r$ and, therefore, it can also act as a single-number performance metric.
+%\textbf{Variables}
+
+The variables in the statistical studies are the values that assume certain characteristics of interest for research. The following are the variables from which we will extract the values in several scenarios in order to analyse the performance of the compared execution engines. The variables studied are classified as continuous quantitative variables, since they assume numerical values that vary within an infinite range, with the exception of variable 5, which is classified as discrete quantitative, since it assumes only integer and positive numerical values.
+\begin{enumerate}
+\item Average total CPU time per task.
+\item Total average wait time for tasks in the task queue.
+\item Total average processing time of tasks.
+\item Average total bytes processed per unit of time.
+\item Average number of messages processed per unit of time.
+\item Average total CPU time in processing a message.
+\end{enumerate}
+% \noindent
+% \textbf{Treatment Factor 3 x 3 x 3}
+In an experiment, the factor, also called an independent variable, is an explanatory variable manipulated by the experimenter. The different values of the factor are called \textit{level} and the combinations of factor levels are called \textit{treatments}. In our case, we will have the following treatment factors: \textit{(i)} Runtime systems execution models, textit{(ii)} Integration solution and textit{(iii)} Message input rate. First factor is classified as nominal qualitative and its levels will be: task-based, process-based, proposed model. Second factor is classified as qualitative and its levels will be different integration solutions to be defined. Latter is classified as continuous quantitative and its levels will be message input rates to be defined.
+% These factors are classified as qualitative, when it assumes non-numerical and quantitative values when it assumes numerical values. The treatment factors of our statistical validation model and their respective levels are listed below. 
+% \begin{itemize}
+% \item Treatment Factor 1
+%     \begin{itemize}
+%       \item Type: Nominal Qualitative.
+%       \item Description: Integration platforms runtime systems models.
+%       \item Levels: task-based $(M_1)$, process-based$(M_2)$, proposed model$(M_3)$.
+%     \end{itemize}
+% \item Treatment Factor 2
+%     \begin{itemize}
+%     	\item Type: Qualitative.
+%     	\item Description: Solution for integrating enterprise processes in cloud computing.
+%     	\item Levels: Three different solution for integration to be defined $(S_1,S_2,S_3)$.
+%     \end{itemize}
+% \item Treatment Factor 3
+%     \begin{itemize}
+%     	\item Type: Continuous quantitative.
+%     	\item Description: Message input rate, set of bytes per second.
+%     	\item Levels: Three different message input rates, set of bytes per second to be defined $(R_1,R_2,R_3)$.
+%     \end{itemize}
+% \end{itemize}
+
+% The experiment is classified as \textit{Mixed} in relation to the factors: \textit{runtime system model}, \textit{integration solution} e \textit{input rate} and it has a total of 27 experimental units, as shown in Table~\ref{tab:factors}.
+
+% \begin{table}[!htb]
+% \centering
+% \caption{Relation to the factors}
+% \label{tab:factors}
+% \begin{tabular}{lllcclllcclll}
+% \hline
+% $M_1$ & $S_1$ & $R_1$ & & & $M_2$ & $S_1$ & $R_1$  & & & $M_3$ & $S_1$ & $R_1$ \\ \hline
+% $M_1$ & $S_1$ & $R_2$ & & & $M_2$ & $S_1$ & $R_2$  & & & $M_3$ & $S_1$ & $R_2$ \\ \hline
+% $M_1$ & $S_1$ & $R_3$ & & & $M_2$ & $S_1$ & $R_3$  & & & $M_3$ & $S_1$ & $R_3$ \\ \hline
+% $M_1$ & $S_2$ & $R_1$ & & & $M_2$ & $S_2$ & $R_1$  & & & $M_3$ & $S_2$ & $R_1$ \\ \hline
+% $M_1$ & $S_2$ & $R_2$ & & & $M_2$ & $S_2$ & $R_2$  & & & $M_3$ & $S_2$ & $R_2$ \\ \hline
+% $M_1$ & $S_2$ & $R_3$ & & & $M_2$ & $S_2$ & $R_3$  & & & $M_3$ & $S_2$ & $R_3$ \\ \hline
+% $M_1$ & $S_3$ & $R_1$ & & & $M_2$ & $S_3$ & $R_1$  & & & $M_3$ & $S_3$ & $R_1$ \\ \hline
+% $M_1$ & $S_3$ & $R_2$ & & & $M_2$ & $S_3$ & $R_2$  & & & $M_3$ & $S_3$ & $R_2$ \\ \hline
+% $M_1$ & $S_3$ & $R_3$ & & & $M_2$ & $S_3$ & $R_3$  & & & $M_3$ & $S_3$ & $R_3$ \\
+% \end{tabular}
+% \end{table}
