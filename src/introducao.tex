@@ -1,10 +1,7 @@
 %Introdução
-This proposal presents the plan of work to the development of the thesis of doctoral of the Postgraduate Program in Mathematical Modelling, from the Unijuí University.
-The research is being carried out by the Research Group on Applied Computing (GCA), which is comprised of undergraduate, master and doctoral students and professors of Unijuí University, with the collaboration of others institutions. This research is supported by the Brazilian Coordination for the Improvement of Higher Education Personnel (PROSUP/CAPES) under grants to proposal author.
+This proposal presents the plan of work to the development of the thesis of doctoral of the Postgraduate Program in Mathematical Modelling, from the Unijuí University. The research is being carried out in the the Applied Computing Research Group (GCA), which is comprised of undergraduate, master and doctoral students and professors of Unijuí University, with the collaboration of others institutions. This research is supported by the Brazilian Coordination for the Improvement of Higher Education Personnel (CAPES/PROSUP).
 
-Next, we contextualize the field of study of enterprise application integration and cloud computing, the problem that motivates this research, the objectives pursued, our contributions to date and the important collaborations that this research has received.
-
-The following chapters seek to provide detailed information about the research being developed over 48 months.
+Next, they are presenting the context of the field of study of enterprise application integration and cloud computing, the problem that motivates this research, the objectives pursued, our contributions to date and the important collaborations that this research has received. The following sections seek to provide detailed information about the research being developed over 48 months.
 % \section{Identification}
 % \begin{description} 
 % \item [Nome:] Daniela Freire Sellaro
@@ -30,7 +27,7 @@ Cloud Computing~\cite{NIST:2011} is another field of studies that has drawn the 
 The advancement of cloud computing technologies has led companies to a major transformation in their software ecosystem, which now includes on-premise applications, migrated applications for virtual machines in the cloud, social media applications and many other software services available in the cloud. 
 
 % %-- Our solution
-In this proposal, we studied properties that can have an impact on the performance of runtime system classified in two dimensions, that allow to evaluate the ability to process messages efficiently and ensure a fair execution of tasks. We evaluate theses proprieties in runtime systems of popular integration platforms and we observe that they are not sufficiently adapted to the context of the cloud computing. After, we present research directions, that will contribute to migrate and adapt integration technologies to this context.
+This research proposal presents the properties study that can have an impact on the performance of runtime system, regarding the ability to process messages efficiently and ensure a fair execution of tasks. runtime systems of popular integration platforms were evaluated regarding theses proprieties and it was observed that they are not sufficiently adapted to the context of the cloud computing. After, the research problems, that will contribute to migrate and adapt integration technologies to this context, are presented.
 %**********************************************************************************************************************************
 \section{Motivation}
 
@@ -38,12 +35,12 @@ In this proposal, we studied properties that can have an impact on the performan
 The quality of service, that integration solutions are able to achieve in terms of message processing, is directly related to the runtime system the integration platform. Typically, in order to achieve the desired quality of service with an integration solution, software engineers have increased computational resources in the server machine on which the integration platform is installed within the enterprise. This approach links the increased performance of an integration solution to the increase in financial costs required to augment the current hardware or the purchase of a new server with greater processing power that can generate the desired impact on the performance of the runtime systems, thus increasing the number of messages processed by the integration solutions.
 The hiring of virtual machines in the cloud to host the integration platforms allows a reduction of the total cost of ownership for the realization of the EAI by the companies, as well as through the feature of elasticity of the cloud, a greater flexibility for the increment of computational resources.
 
-This in itself has led companies to want to migrate integration platforms and run their integration solutions in the cloud. The migration of integration platforms to virtual machines in the cloud has given rise to a new service model that is being referred to by the EAI community as integration Platform-as-a-Service (iPaaS)~\cite{pezzini2011}. Data from 2015 show that, together, Latin America, Central America and North America account for 67\% of the market for iPaaS integration platforms, followed by Europe, the Middle East and Africa, which together account for 22\%, and Asia and the Pacific with 11\% of this market, and these values should remain, with little oscillation, by the end of 2019~\cite{sharma2015}. The traditional market for integration platforms used on-premise registered growth of less than 10\% in 2016, while the market for iPaaS integration platforms had a 60\% expansion over the previous year, representing a global market of 700 million Dollars~\cite{guttridge2017}. As early as 2017, two out of three application integration projects are developed directly with cloud integration platforms~\cite{pezzini2015}. The investment made by companies in iPaaS integration platforms will increase by 40\% by 2019~\cite{sharma2015}, making iPaaS the preferred integration platform by companies and with annual revenue growth higher than the traditional platform market of integration used on-premise~\cite{guttridge2017,sharma2017}.
+This has led companies to want to migrate integration platforms and run their integration solutions in the cloud. The migration of integration platforms to virtual machines in the cloud has given rise to a new service model that is being referred to by the EAI community as integration Platform-as-a-Service (iPaaS)~\cite{pezzini2011}. Data from 2015 show that, together, Latin America, Central America and North America account for 67\% of the market for iPaaS integration platforms, followed by Europe, the Middle East and Africa, which together account for 22\%, and Asia and the Pacific with 11\% of this market, and these values should remain, with little oscillation, by the end of 2019~\cite{sharma2015}. The traditional market for integration platforms used on-premise registered growth of less than 10\% in 2016, while the market for iPaaS integration platforms had a 60\% expansion over the previous year, representing a global market of 700 million Dollars~\cite{guttridge2017}. As early as 2017, two out of three application integration projects are developed directly with cloud integration platforms~\cite{pezzini2015}. The investment made by companies in iPaaS integration platforms will increase by 40\% by 2019~\cite{sharma2015}, making iPaaS the preferred integration platform by companies and with annual revenue growth higher than the traditional platform market of integration used on-premise~\cite{guttridge2017,sharma2017}.
 
 %-- % %-- Why it is a problem?
 Given the high investments in iPaaS integration platforms, a research effort is needed to study and adapt these platforms to the new paradigm that represents cloud computing. In this context, the efficiency of runtime systems is fundamental since a number of computing resources in the cloud follows the pay-as-you-go model, and therefore has a direct impact on the financial cost involved in executing the solutions. The higher the efficiency of runtime systems, the less computational resources will need to be contracted or consumed in order for an integration solution to achieve the expected quality of service. In this proposal, performance is defined as the ability to process more messages per unit of time, without having to increase the number of computational resources allocated to the runtime system.
 %**********************************************************************************************************************************
-\section{Objective}
+\section{Objectives}
 
 \subsection{Main}
 
@@ -71,36 +68,38 @@ Reduce the average processing time of a message through the integration process,
 \label{sec:contributions}  
 \noindent
 
-In the following, we show our main contributions to date. 
+This section brings the main contributions to date. 
      
-Articles submitted to international journal:
+\subsubsection*{Articles submitted to international journal:}
+
 \begin{itemize}
 \item \textit{Towards a Methodology to Compare Enterprise Application Integration Platforms Focusing on Performance.}
 
-Journal Name: Software Practice and Experience. Qualis: A2. JCR: 1.60;
-\item \textit{A Survey on the Runtime Systems of Enterprise Application Integration Platforms Focusing on Performance Journal.}
+At: Software Practice and Experience. Qualis: A2. JCR: 1.60;
+\item \textit{A Survey on the Runtime Systems of Enterprise Application Integration Platforms Focusing on Performance.}
 
-Name: Journal of Systems and Software. Qualis: A2. JCR: 2.44;
+At: Journal of Systems and Software. Qualis: A2. JCR: 2.44;
 \item \textit{Optimization of the size of thread pool in runtime systems to Enterprise Application Integration - a mathematical modelling.}
 
-Journal Name: Computational and Applied Mathematics. Qualis: B1. JCR: 0.96;
+At: Computational and Applied Mathematics. Qualis: B1. JCR: 0.96;
 \item \textit{Novel Task Scheduling Proposal to Runtime System Integration Platforms.}
 
-Journal Name: Journal of Systems and Software. Qualis: A2. JCR: 2.44
+At: Journal of Systems and Software. Qualis: A2. JCR: 2.44
 \end{itemize}
 
-Articles presented to national conference:
+\subsubsection*{Articles presented in conference:}
 \begin{itemize}
 \item \textit{Task Scheduling Optimization on Enterprise Application Integration Platforms Based on the Meta-heuristic Particle Swarm Optimization}
 
-Conference Name: Simpósio Brasileiro de Engenharia de Software - SBES 2017 of in VIII Congresso Brasileiro de Software. Qualis: B2.
+At: XXXI Simpósio Brasileiro de Engenharia de Software (SBES) Qualis: B2.
 \end{itemize}
 
-Articles published in local workshops:
+\subsubsection*{Articles published in workshops:}
+
 \begin{itemize}
 \item \textit{Execução de Soluções de Integração de Aplicações Empresariais na Nuvem: Perspectivas e Desafios}
 
-Workshop Name: IV Seminário de Formação Científica e Tecnológica (Seminar), Ijuí, Brazil.
+At: IV Seminário de Formação Científica e Tecnológica (SFCT), Ijuí, Brazil.
 \end{itemize}
 
 %**********************************************************************************************************************************
@@ -108,10 +107,10 @@ Workshop Name: IV Seminário de Formação Científica e Tecnológica (Seminar),
 \label{sec:collaboration}  
 \noindent
 
-This research count on precious collaborations resulted in joint publications and lots of interesting discussions. In the following, we provide additional information about each collaboration:
+This research counts on collaborations with the following researchers:
 
 \begin{itemize}
-\item Dr. Fabricia Roos-Frantz (Unijuí University, Brazil): participation in follow-up meetings and seminars, feedbacks about our inferences, , articles review, assistance in the field of study of scientific methodology and software engineering.
+\item Dr. Fabricia Roos-Frantz (Unijuí University, Brazil): participation in follow-up meetings and seminars, feedbacks about our inferences, articles review, assistance in the field of study of scientific methodology and software engineering.
 \item Dr. Sandro Sawicki (Unijuí University, Brazil): participation in follow-up meetings and seminars, feedbacks about our inferences, articles review, help in the field of study of optimization techniques.
 \item Dr. Vitor Manuel Basto Fernandes (University Institute of Lisbon, Portugal): participation in follow-up meetings and seminars, feedbacks about our inferences, articles review, help in the field of study of data science.
 \item Dr. Inmaculada Hernández Salmerón (University of Seville, Spain): participation in follow-up meetings and seminars, articles review, feedbacks about our inferences, help in the field of study of cloud computing.
@@ -129,7 +128,8 @@ This research count on precious collaborations resulted in joint publications an
 % \end{itemize}
 
 %**********************************************************************************************************************************
-\section{Structure of this document}  
+
+\section{Structure of this Document}  
 \noindent
 
-The rest of this proposal is organised as follows: Section~\ref{cap:methodology} presents the methodology; Section~\ref{cap:stateofart} presents the technical and scientific literature review about integration platform; Section~\ref{cap:researchproblems} lists the issues to investigated derived of the literature review; Section~\ref{cap:validation} reports how results will be judged, interpreted and validated; Section~\ref{cap:schedule} shows a time-table for achieving key objectives, plans in cases where goals are not met by specific target date and informers the current state of the research; and Section~\ref{cap:infrastructure} describes the utilised infrastructure in the research.
+The rest of this proposal is organised as follows: Section~\ref{cap:methodology} presents the methodology; Section~\ref{cap:stateofart} presents the technical and scientific literature review about integration platform; Section~\ref{cap:researchproblems} lists the issues to investigated derived of the literature review; Section~\ref{cap:validation} reports how results will be judged, interpreted and validated; Section~\ref{cap:schedule} shows a time-table for achieving key objectives, plans in cases where goals are not met by specific target date and informers the current state of the research; and Section~\ref{cap:infrastructure} describes the infrastructure available to develop this research.
